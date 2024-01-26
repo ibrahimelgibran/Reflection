@@ -1,9 +1,14 @@
 package iegcode.reflection.data;
 
-public class Person {
+import iegcode.reflection.annotation.NotBlank;
 
+import java.io.Serializable;
+
+public final class Person implements Nameable, Serializable {
+
+    @NotBlank
     private String firstName;
-
+    @NotBlank(allowEmptyString = true)
     private String lastName;
 
     public Person() {
