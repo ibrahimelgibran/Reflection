@@ -3,6 +3,7 @@ package iegcode.reflection.data;
 import iegcode.reflection.annotation.NotBlank;
 
 import java.io.Serializable;
+import java.util.List;
 
 public final class Person implements Nameable, Serializable {
 
@@ -10,6 +11,8 @@ public final class Person implements Nameable, Serializable {
     private String firstName;
     @NotBlank(allowEmptyString = true)
     private String lastName;
+
+    private List<String> hobbies;
 
     private int age;
 
@@ -20,6 +23,14 @@ public final class Person implements Nameable, Serializable {
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public List<String> getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(List<String> hobbies) {
+        this.hobbies = hobbies;
     }
 
     public int getAge() {
