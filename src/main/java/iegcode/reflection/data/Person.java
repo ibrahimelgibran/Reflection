@@ -11,6 +11,8 @@ public final class Person implements Nameable, Serializable {
     @NotBlank(allowEmptyString = true)
     private String lastName;
 
+    private int age;
+
     public Person() {
 
     }
@@ -18,6 +20,14 @@ public final class Person implements Nameable, Serializable {
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getFirstName() {
@@ -41,6 +51,7 @@ public final class Person implements Nameable, Serializable {
         return "Person{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", age=" + age +
                 '}';
     }
 }
